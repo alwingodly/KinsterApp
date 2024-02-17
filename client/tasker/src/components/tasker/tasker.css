@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width:100%
+}
+
+.boxer {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  width: 70%;
+}
+
+.box {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  border-radius: 20px;
+  align-items: center;
+  display: flex;
+}
+
+.form {
+  width: 100%;
+  /* background-color: #ccc; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-container {
+  margin-bottom: 10px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.tasker-task-table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tasker-task-table th,
+.tasker-task-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  
+}
+
+
+.tasker-task-table th {
+  background-color: rgb(158, 125, 176);
+  color: rgb(250, 249, 249);
+}
+.Taskinput{
+  margin: 10px;
+}

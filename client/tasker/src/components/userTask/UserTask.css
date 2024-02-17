@@ -1,0 +1,60 @@
+.user-task-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.task-table {
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  background-color: rgb(158, 125, 176);
+  color: #ddd;
+}
+
+.action-button {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.green {
+  background-color: green;
+}
+
+.no-tasks {
+  margin-top: 20px;
+  text-align: center;
+  color: #555;
+}
+
+.task-count {
+  margin-bottom: 10px;
+}
+
+.task-count p {
+  margin: 0;
+  color: #555;
+}

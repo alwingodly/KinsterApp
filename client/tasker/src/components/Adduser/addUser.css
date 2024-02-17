@@ -1,0 +1,40 @@
+.modal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(118, 118, 118, 0.3);
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    background-color:#f8f8f8;
+
+}
+.input{
+    background-color:#f9f8f8;
+}
+.addUserOverlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+    flex: 1;
+}
+.addUserImage{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addUserContainer {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+}
+.AU-image {
+    width: 50%;
+    height: auto;
+  }

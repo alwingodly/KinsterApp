@@ -1,0 +1,56 @@
+/* navbar.css */
+
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    height: 50px;
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+  
+  .navLeft,
+  .navRight {
+    display: flex;
+    align-items: center;
+
+  }
+  h2{
+    background-color: #f2f2f2;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  .navLeft {
+    flex: 1;
+  }
+  
+  .navRight {
+    justify-content: flex-end;
+  }
+  
+  .addUserButton {
+    border: none;
+    background-color: rgb(86, 128, 142);
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .logoImg {
+    width: 90px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .addUserButton {
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+  
+    .navbarContainer {
+      min-height: 45px;
+      padding: 0 10px;
+    }
+  }
+  
