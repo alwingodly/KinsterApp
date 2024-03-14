@@ -1,6 +1,5 @@
 import React from 'react';
-import './superAdminLogin.css';
-import superAdmin from '../../assets/office.png';
+import leave from '../../assets/leave.png';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { toast, ToastContainer } from "react-toastify";
@@ -8,11 +7,11 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { adminAuth } from '../../redux/Slicers/adminSlicer';
-function SuperAdminLogin() {
+function Leave() {
   const dispatch = useDispatch()
   const validationSchema = Yup.object({
     superAdminId: Yup.string().required('Super Admin ID is required'),
-    password: Yup.string().required('Password is required'),
+    reason: Yup.string().required('reason is required'),
   });
 
   const [loading, setLoading] = React.useState(false);
@@ -20,13 +19,13 @@ function SuperAdminLogin() {
   const formik = useFormik({
     initialValues: {
       superAdminId: '',
-      password: '',
+      reason: '',
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
         setLoading(true);
-        const response =  await axios.post('https://bnd.kinster.online/auth/superadmin', values);
+        const response =  await axios.post('https://bnd.kinster.online/user/leave', values);
         if(response.status === 200){
           console.log(response.data.message);
           dispatch(adminAuth(response.data.message))
@@ -48,7 +47,7 @@ function SuperAdminLogin() {
     <div className='SA-container'>
       <div className='SA-left'>
         <div className='SA-formContainer'>
-          <p className='welcome'>Welcome Super Admin</p>
+          <p className='welcome'>Apply for Leave</p>
           <form className='SA-form' onSubmit={formik.handleSubmit}>
             <div className='form-group'>
               <input
@@ -67,17 +66,17 @@ function SuperAdminLogin() {
             </div>
             <div className='form-group'>
               <input
-                className={`input ${formik.touched.password && formik.errors.password ? 'input-error' : ''}`}
-                type='password'
-                id='password'
-                name='password'
-                value={formik.values.password}
+                className={`input ${formik.touched.reason && formik.errors.reason ? 'input-error' : ''}`}
+                type='text'
+                id='reason'
+                name='reason'
+                value={formik.values.reason}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                placeholder='Enter password'
+                placeholder='Reason'
               />
-              {formik.touched.password && formik.errors.password && (
-                <div className='error'>{formik.errors.password}</div>
+              {formik.touched.reason && formik.errors.reason && (
+                <div className='error'>{formik.errors.reason}</div>
               )}
             </div>
             <button type='submit' className='addUserButton' disabled={loading}>
@@ -88,8 +87,8 @@ function SuperAdminLogin() {
       </div>
       <div className='SA-right'>
         <div className='SA-imgContainer'>
-          <img className='SA-image' src={superAdmin} alt='super-admin' />
-          <p className='welcome-small'>Something about admin</p>
+          <img className='SA-image' src={leave} alt='super-admin' />
+          <p className='welcome-small'></p>
         </div>
       </div>
       <ToastContainer />
@@ -97,4 +96,4 @@ function SuperAdminLogin() {
   );
 }
 
-export default SuperAdminLogin;
+export default Leave;

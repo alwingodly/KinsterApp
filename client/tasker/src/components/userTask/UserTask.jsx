@@ -11,7 +11,7 @@ function UserTask() {
     try {
       const correctIndex = tasks.length - 1 - index;
       const response = await axios.get(
-        `http://localhost:7700/user/updateTaskStatus/?taskIndex=${correctIndex}&employeeID=${userId}`
+        `https://bnd.kinster.online/user/updateTaskStatus/?taskIndex=${correctIndex}&employeeID=${userId}`
       );
       setTasks(response.data.tasks || []);
     } catch (error) {
@@ -23,7 +23,7 @@ function UserTask() {
     const getUserTasks = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:7700/user/usertask?userId=${userId}`
+          `https://bnd.kinster.online/user/usertask?userId=${userId}`
         );
         setTasks(response.data.tasks || []);
       } catch (error) {

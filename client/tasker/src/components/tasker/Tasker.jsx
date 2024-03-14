@@ -22,7 +22,7 @@ function Tasker() {
     const getUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:7700/superadmin/allusers"
+          "https://bnd.kinster.online/superadmin/allusers"
         );
         setOptions(response.data.users);
         optionsRef.current = response.data.users;
@@ -59,7 +59,7 @@ function Tasker() {
   const onSubmit = async (values, { resetForm }) => {
     try {
       const response = await axios.post(
-        "http://localhost:7700/superadmin/tasker",
+        "https://bnd.kinster.online/superadmin/tasker",
         values
       );
       console.log(response, "----");
@@ -85,7 +85,7 @@ function Tasker() {
   const userTask = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:7700/user/usertask?userId=${selectedOption}`
+        `https://bnd.kinster.online/user/usertask?userId=${selectedOption}`
       );
       setTasks(response.data.tasks || []);
       setNo(true);

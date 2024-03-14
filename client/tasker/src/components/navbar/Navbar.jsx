@@ -33,6 +33,9 @@ function Navbar() {
   const navigateTotask = () => {
     navigate("task");
   };
+  const navigateToLeave = ()=>{
+   navigate("leave")
+  }
   useEffect(() => {
     setAdminNav(key);
     setUserNav(userkey);
@@ -89,11 +92,17 @@ function Navbar() {
             Task
           </button>
         )} 
+        {/* {userNav && (
+          <button style={{marginRight: '20px'}} className="addUserButton" onClick={navigateToLeave}>
+            Leave
+          </button>
+        )}  */}
         {adminNav && (
           <button className="addUserButton" onClick={adminLogout}>
             Log Out
           </button>
         )}
+        
         {userNav && (
           <button className="addUserButton" onClick={userLogout}>
             Log Out

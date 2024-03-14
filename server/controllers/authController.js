@@ -10,7 +10,6 @@ export const userLogin = async (req, res) => {
       const foundUser = user.allowedUsers.find(allowedUser => allowedUser.email === email);
      
       if (foundUser && foundUser.password === password) {
-        console.log("valid user");
         const token = jwt.sign({ userId: foundUser._id, email: foundUser.email }, 'your-secret-key', { expiresIn: '1h' });
         
         res.status(200).json({ success: true, tokens:token, user: foundUser });

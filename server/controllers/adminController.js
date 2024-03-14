@@ -13,11 +13,13 @@ export const adminPass = async (req, res) => {
 
       return res.status(400).json({ success: false, message: 'Admin pass is incorrect' });
     }
-
+    const currentMonth = new Date().getMonth() + 1;
+    const sickLeave = 13 - currentMonth;
+    const casualLeave = Math.round((13 - currentMonth) / 2);
     const adminPassDocument = await AdminPass.findOne();
     if (!adminPassDocument) {
       const newAdminPass = new AdminPass();
-      newAdminPass.allowedUsers.push({ employeeID, email, name, password });
+      newAdminPass.allowedUsers.push({ employeeID, email, name, password, sickLeave, casualLeave  });
       await newAdminPass.save();
     } else {
       const existingUser = adminPassDocument.allowedUsers.find(
@@ -28,7 +30,7 @@ export const adminPass = async (req, res) => {
         return res.status(401).json({ success: false, message: 'This user already has admin pass' });
       }
 
-      adminPassDocument.allowedUsers.push({ employeeID, email, name, password });
+      adminPassDocument.allowedUsers.push({ employeeID, email, name, password,sickLeave, casualLeave  });
 
 
       await adminPassDocument.save();

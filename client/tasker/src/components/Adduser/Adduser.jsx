@@ -22,7 +22,7 @@ function AddUser() {
       return
       }
       const response = await axios.post(
-        "http://localhost:7700/superadmin/adminpass",
+        "https://bnd.kinster.online/superadmin/adminpass",
         values
       );
       console.log(response);

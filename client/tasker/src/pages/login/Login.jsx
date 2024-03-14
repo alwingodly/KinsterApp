@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { useFormik } from "formik";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
@@ -19,7 +19,7 @@ function Login() {
 
   const onSubmit = async (values) => {
     try {
-      const response = await axios.post("http://localhost:7700/auth/login", values);
+      const response = await axios.post("https://bnd.kinster.online/auth/login", values);
   
       if (response.data.success === true) {
         dispatch(userAuth(response.data));

@@ -11,6 +11,7 @@ import LoginWrapper from './wrapper/loginWrapper';
 import UserHome from './pages/userHome/userHome';
 import UserWrapper from './wrapper/userWrapper';
 import UserTask from './components/userTask/UserTask';
+import Leave from './components/leave/Leave';
 function App() {
   return (
     <div className="App">
@@ -24,7 +25,7 @@ function App() {
           <Route path="/" element={<UserWrapper />}>
              <Route path="home" element={<UserHome />} /> 
              <Route path="task" element={<UserTask />} />   
-
+             <Route path="leave" element={<Leave />} />
           </Route>
 
 

@@ -22,6 +22,12 @@ const AdminPassSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
+      sickLeave:{
+        type: Number,
+      },
+      casualLeave:{
+        type: Number,
+      },
       tasks: [
         {
           task: {
